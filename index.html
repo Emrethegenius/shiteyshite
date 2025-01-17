@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geography Quiz Game</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <section class="hero-container">
+            <div class="hero-content">
+                <div class="title-section">
+                    <h1>DAILY GEO QUIZ</h1>
+                    <div class="globe-animation">
+                        <div class="globe"></div>
+                    </div>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Pinpoint locations on a world map based on unique questions.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-trophy"></i>
+                        <p>Earn points based on accuracy, max 20,000 across 5 rounds.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-sync"></i>
+                        <p>Daily questions, same for all players, results displayed at the end.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-share-alt"></i>
+                        <p>Share and compare scores with friends.</p>
+                    </div>
+                </div>
+                <button id="start-game">
+                    <span>START QUIZ</span>
+                    <svg viewBox="0 0 24 24" width="24" height="24">
+                        <path fill="currentColor" d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
+                    </svg>
+                </button>
+            </div>
+        </section>
+        <section id="game-section" style="display: none;">
+            <div class="game-content-wrapper">
+                <div id="end-screen" style="display: none;" class="end-screen">
+                    <div class="end-content">
+                        <h2>Quiz Complete!</h2>
+                        <div id="final-score"></div>
+                        <div id="final-time"></div>
+                        <div id="final-stats"></div>
+                        <div class="end-buttons">
+                            <button id="see-results-map" class="end-button">See Results on Map</button>
+                            <button id="share-results" class="end-button">Share Results</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="question-container" class="question-box">
+                    <h2 id="question"></h2>
+                    <button class="submit-button" id="submit-guess" style="display: none;">Submit Answer</button>
+                    <button class="next-button" style="display: none;">Next Question</button>
+                </div>
+                <div id="map">
+                    <div class="timer-container-map">
+                        <div class="stat-label">Time:</div>
+                        <div id="timer" class="stat-value">00:00</div>
+                    </div>
+                    <div class="stats-container">
+                        <div class="stat-box">
+                            <div class="stat-label">Distance</div>
+                            <div id="distance" class="stat-value">0 km</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">Score</div>
+                            <div id="score" class="stat-value">0</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
